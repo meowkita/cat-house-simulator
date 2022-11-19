@@ -42,33 +42,29 @@ public class ConsoleHouseMenu implements HouseMenu {
         int age;
 
         try {
-            System.out.print("Enter pet name: ");
+            System.out.print("Enter cat name: ");
             name = reader.readLine();
 
             if (name.length() <= 1) {
                 throw new IllegalArgumentException();
             }
         } catch (IOException e) {
-            System.out.println("Pet name is invalid! Pet won't be added.");
+            System.out.println("Pet name is invalid! Cat won't be added.");
             return;
         } catch (IllegalArgumentException e) {
-            System.out.println("Pet name must be greater than 1 symbol! Pet won't be added.");
+            System.out.println("Pet name must be greater than 1 symbol! Cat won't be added.");
             return;
         }
 
         try {
-            System.out.print("Enter pet age: ");
+            System.out.print("Enter cat age: ");
             age = Integer.parseInt(reader.readLine());
         } catch (IOException | NumberFormatException e) {
-            System.out.println("Age is invalid! Pet won't be added.");
+            System.out.println("Age is invalid! Cat won't be added.");
             return;
         }
 
-        house.add(new Cat.CatBuilder()
-                .name(name)
-                .age(age)
-                .randomStats()
-                .build());
+        house.add(new Cat.CatBuilder().name(name).age(age).randomStats().build());
     }
 
     @Override
@@ -79,11 +75,35 @@ public class ConsoleHouseMenu implements HouseMenu {
             System.out.print("Enter ID to remove: ");
             id = Integer.parseInt(reader.readLine());
         } catch (IOException | NumberFormatException e) {
-            System.out.println("ID is invalid! Pet won't be removed.");
+            System.out.println("ID is invalid! Cat won't be removed.");
             return;
         }
 
         house.remove(id);
+    }
+
+    @Override
+    public void play() {
+        int id = getCatId();
+        if (id != -1) {
+            house.get(id).play(50);
+        }
+    }
+
+    @Override
+    public void feed() {
+        int id = getCatId();
+        if (id != -1) {
+            house.get(id).feed(50);
+        }
+    }
+
+    @Override
+    public void heal() {
+        int id = getCatId();
+        if (id != -1) {
+            house.get(id).heal(50);
+        }
     }
 
     @Override
@@ -97,6 +117,20 @@ public class ConsoleHouseMenu implements HouseMenu {
     @Override
     public void close() {
         isOpened = false;
+    }
+
+    private int getCatId() {
+        int id;
+
+        try {
+            System.out.print("Enter a cat ID: ");
+            id = Integer.parseInt(reader.readLine());
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("ID is invalid!");
+            return -1;
+        }
+
+        return id;
     }
 
 }

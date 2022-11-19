@@ -17,6 +17,10 @@ public class House {
         catHashMap.put(++counter, cat);
     }
 
+    public Cat get(int id) {
+        return catHashMap.get(id);
+    }
+
     public void remove(int id) {
         catHashMap.remove(id);
     }

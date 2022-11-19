@@ -10,6 +10,12 @@ public interface HouseMenu {
 
     void remove();
 
+    void play();
+
+    void feed();
+
+    void heal();
+
     void sleep();
 
     void close();
