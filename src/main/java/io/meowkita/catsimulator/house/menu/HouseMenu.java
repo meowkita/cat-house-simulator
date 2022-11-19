@@ -10,4 +10,6 @@ public interface HouseMenu {
 
     void sleep();
 
+    void close();
+
 }

@@ -2,6 +2,8 @@ package io.meowkita.catsimulator.house.menu;
 
 import io.meowkita.catsimulator.cat.Cat;
 import io.meowkita.catsimulator.house.House;
+import io.meowkita.catsimulator.house.menu.HouseMenu;
+import io.meowkita.catsimulator.house.printer.HousePrinter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,15 +12,20 @@ import java.io.InputStreamReader;
 public class ConsoleHouseMenu implements HouseMenu {
 
     private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private final HousePrinter printer;
     private final House house;
+    private boolean isOpened;
 
-    public ConsoleHouseMenu(House house) {
+    public ConsoleHouseMenu(House house, HousePrinter printer) {
         this.house = house;
+        this.printer = printer;
+
+        isOpened = true;
     }
 
     @Override
     public void print() {
-        house.print();
+        printer.print(house.getCatHashMap());
     }
 
     @Override
@@ -58,7 +65,17 @@ public class ConsoleHouseMenu implements HouseMenu {
 
     @Override
     public void remove() {
+        int id;
 
+        try {
+            System.out.print("Enter ID to remove: ");
+            id = Integer.parseInt(reader.readLine());
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("ID is invalid! Pet won't be removed.");
+            return;
+        }
+
+        house.remove(id);
     }
 
     @Override
@@ -67,6 +84,11 @@ public class ConsoleHouseMenu implements HouseMenu {
         house.sleep();
         System.out.println("--- ZZzzz...");
         System.out.println("--- New day is coming! Time to wake up! ---");
+    }
+
+    @Override
+    public void close() {
+        isOpened = false;
     }
 
 }
