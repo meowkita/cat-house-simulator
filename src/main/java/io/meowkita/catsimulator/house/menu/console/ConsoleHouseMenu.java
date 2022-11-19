@@ -84,25 +84,37 @@ public class ConsoleHouseMenu implements HouseMenu {
 
     @Override
     public void play() {
-        int id = getCatId();
-        if (id != -1) {
-            house.get(id).play(50);
+        try {
+            int id = getCatId();
+            if (id != -1) {
+                house.get(id).play(50);
+            }
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
         }
     }
 
     @Override
     public void feed() {
-        int id = getCatId();
-        if (id != -1) {
-            house.get(id).feed(50);
+        try {
+            int id = getCatId();
+            if (id != -1) {
+                house.get(id).feed(50);
+            }
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
         }
     }
 
     @Override
     public void heal() {
-        int id = getCatId();
-        if (id != -1) {
-            house.get(id).heal(50);
+        try {
+            int id = getCatId();
+            if (id != -1) {
+                house.get(id).heal(50);
+            }
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
         }
     }
 

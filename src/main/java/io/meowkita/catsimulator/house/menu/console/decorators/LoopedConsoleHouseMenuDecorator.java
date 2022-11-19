@@ -34,6 +34,8 @@ public class LoopedConsoleHouseMenuDecorator extends ConsoleHouseMenu {
                 throw new RuntimeException(e);
             }
 
+            System.out.println();
+
             switch (action) {
                 case "add" -> add();
                 case "remove" -> remove();

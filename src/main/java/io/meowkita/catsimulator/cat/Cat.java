@@ -22,6 +22,10 @@ public class Cat {
         this.health = health;
     }
 
+    protected Cat(Cat cat) {
+        this(cat.name, cat.age, cat.satiety, cat.happiness, cat.health);
+    }
+
     public String getName() {
         return name;
     }
@@ -44,19 +48,19 @@ public class Cat {
 
     public void play(int amount) {
         increaseHappiness(amount);
-        decreaseSatiety((int) (amount * 0.33));
-        decreaseHealth((int) (amount * 0.33));
+        decreaseSatiety((int) (amount * 0.15));
+        decreaseHealth((int) (amount * 0.15));
     }
 
     public void feed(int amount) {
-        decreaseHappiness((int) (amount * 0.33));
+        decreaseHappiness((int) (amount * 0.15));
         increaseSatiety(amount);
-        decreaseHealth((int) (amount * 0.33));
+        decreaseHealth((int) (amount * 0.15));
     }
 
     public void heal(int amount) {
-        decreaseHappiness((int) (amount * 0.33));
-        decreaseSatiety((int) (amount * 0.33));
+        decreaseHappiness((int) (amount * 0.15));
+        decreaseSatiety((int) (amount * 0.15));
         increaseHealth(amount);
     }
 

@@ -14,6 +14,7 @@ public class App {
         House house = new MockHouse();
         HousePrinter printer = new ConsoleHousePrinter();
         HouseMenu menu = new LoopedConsoleHouseMenuDecorator(new ConsoleHouseMenu(house, printer));
+
         menu.open();
     }
 
