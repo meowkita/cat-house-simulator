@@ -1,4 +1,4 @@
-package io.meowkita.catsimulator.house.menu;
+package io.meowkita.catsimulator.house.menu.console;
 
 import io.meowkita.catsimulator.cat.Cat;
 import io.meowkita.catsimulator.house.House;
@@ -11,15 +11,23 @@ import java.io.InputStreamReader;
 
 public class ConsoleHouseMenu implements HouseMenu {
 
-    private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    protected final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private final HousePrinter printer;
     private final House house;
-    private boolean isOpened;
+    protected boolean isOpened;
 
     public ConsoleHouseMenu(House house, HousePrinter printer) {
         this.house = house;
         this.printer = printer;
+        isOpened = false;
+    }
 
+    protected ConsoleHouseMenu(ConsoleHouseMenu consoleHouseMenu) {
+        this(consoleHouseMenu.house, consoleHouseMenu.printer);
+    }
+
+    @Override
+    public void open() {
         isOpened = true;
     }
 
