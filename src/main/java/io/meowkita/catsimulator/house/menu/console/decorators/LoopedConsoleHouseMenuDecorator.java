@@ -7,8 +7,8 @@ import java.util.Locale;
 
 public class LoopedConsoleHouseMenuDecorator extends ConsoleHouseMenu {
 
-    public LoopedConsoleHouseMenuDecorator(ConsoleHouseMenu consoleHouseMenu) {
-        super(consoleHouseMenu);
+    public LoopedConsoleHouseMenuDecorator(ConsoleHouseMenu menu) {
+        super(menu);
     }
 
     @Override

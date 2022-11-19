@@ -5,7 +5,7 @@ import io.meowkita.catsimulator.house.MockHouse;
 import io.meowkita.catsimulator.house.menu.HouseMenu;
 import io.meowkita.catsimulator.house.menu.console.ConsoleHouseMenu;
 import io.meowkita.catsimulator.house.menu.console.decorators.LoopedConsoleHouseMenuDecorator;
-import io.meowkita.catsimulator.house.printer.ConsoleHousePrinter;
+import io.meowkita.catsimulator.house.printer.console.ConsoleHousePrinter;
 import io.meowkita.catsimulator.house.printer.HousePrinter;
 
 public class App {
