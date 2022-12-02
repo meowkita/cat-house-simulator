@@ -1,4 +1,4 @@
-package io.meowkita.catsimulator.house;
+package io.meowkita.catsimulator.cat.house;
 
 import io.meowkita.catsimulator.cat.Cat;
 

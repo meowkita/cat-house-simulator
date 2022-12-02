@@ -2,11 +2,11 @@ package io.meowkita.catsimulator.cat.decorators;
 
 import io.meowkita.catsimulator.cat.Cat;
 
-public class LockInteractionCatDecorator extends Cat {
+public class LockInteractionCat extends Cat {
 
     private boolean canInteract = true;
 
-    public LockInteractionCatDecorator(Cat cat) {
+    public LockInteractionCat(Cat cat) {
         super(cat);
     }
 

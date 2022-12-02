@@ -1,13 +1,13 @@
-package io.meowkita.catsimulator.house.menu.console.decorators;
+package io.meowkita.catsimulator.cat.house.menu.console.decorators;
 
-import io.meowkita.catsimulator.house.menu.console.ConsoleHouseMenu;
+import io.meowkita.catsimulator.cat.house.menu.console.ConsoleHouseMenu;
 
 import java.io.IOException;
 import java.util.Locale;
 
-public class LoopedConsoleHouseMenuDecorator extends ConsoleHouseMenu {
+public class LoopedConsoleHouseMenu extends ConsoleHouseMenu {
 
-    public LoopedConsoleHouseMenuDecorator(ConsoleHouseMenu menu) {
+    public LoopedConsoleHouseMenu(ConsoleHouseMenu menu) {
         super(menu);
     }
 

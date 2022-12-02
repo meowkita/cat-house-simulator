@@ -1,9 +1,9 @@
-package io.meowkita.catsimulator.house.menu.console;
+package io.meowkita.catsimulator.cat.house.menu.console;
 
 import io.meowkita.catsimulator.cat.Cat;
-import io.meowkita.catsimulator.house.House;
-import io.meowkita.catsimulator.house.menu.HouseMenu;
-import io.meowkita.catsimulator.house.printer.HousePrinter;
+import io.meowkita.catsimulator.cat.house.House;
+import io.meowkita.catsimulator.cat.house.menu.HouseMenu;
+import io.meowkita.catsimulator.cat.house.printer.HousePrinter;
 
 import java.io.BufferedReader;
 import java.io.IOException;

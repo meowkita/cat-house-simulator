@@ -1,8 +1,7 @@
-package io.meowkita.catsimulator.house.printer.console;
+package io.meowkita.catsimulator.cat.house.printer.console;
 
 import io.meowkita.catsimulator.cat.Cat;
-import io.meowkita.catsimulator.house.House;
-import io.meowkita.catsimulator.house.printer.HousePrinter;
+import io.meowkita.catsimulator.cat.house.printer.HousePrinter;
 
 import java.util.Comparator;
 import java.util.HashMap;

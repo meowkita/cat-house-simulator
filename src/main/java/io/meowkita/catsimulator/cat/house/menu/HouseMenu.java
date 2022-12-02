@@ -1,4 +1,4 @@
-package io.meowkita.catsimulator.house.menu;
+package io.meowkita.catsimulator.cat.house.menu;
 
 public interface HouseMenu {
 
