@@ -39,6 +39,7 @@ public class ConsoleHousePrinter implements HousePrinter {
         catHashMap.entrySet().stream()
                 .sorted(comparator)
                 .forEach(entry -> sortedCats.put(entry.getKey(), entry.getValue()));
+
         print(sortedCats);
     }
 

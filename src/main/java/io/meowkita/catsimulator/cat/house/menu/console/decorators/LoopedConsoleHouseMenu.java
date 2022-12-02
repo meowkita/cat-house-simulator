@@ -23,16 +23,7 @@ public class LoopedConsoleHouseMenu extends ConsoleHouseMenu {
 
             printActions();
             System.out.print("Enter action name: ");
-            String action;
-
-            try {
-                action = reader
-                        .readLine()
-                        .toLowerCase(Locale.ROOT)
-                        .strip();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            String action = tryReadString();
 
             System.out.println();
 
@@ -52,13 +43,25 @@ public class LoopedConsoleHouseMenu extends ConsoleHouseMenu {
     }
 
     private void printActions() {
-        System.out.println("[Add]     Adds a new cat");
+        System.out.println("[Add]     Add a new cat");
         System.out.println("[Remove]  Remove a cat by ID");
-        System.out.println("[Play]    Plays with a cat by ID");
-        System.out.println("[Feed]    Feeds a cat by ID");
-        System.out.println("[Heal]    Heals a cat by ID");
+        System.out.println("[Play]    Play with a cat by ID");
+        System.out.println("[Feed]    Feed a cat by ID");
+        System.out.println("[Heal]    Heal a cat by ID");
         System.out.println("[Sleep]   Skip a one day till morning");
-        System.out.println("[Close]   Closes this menu");
+        System.out.println("[Close]   Close this menu");
+    }
+
+    private String normalizeInput(String input) {
+        return input.toLowerCase(Locale.ROOT).strip();
+    }
+
+    private String tryReadString() {
+        try {
+            return normalizeInput(reader.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
