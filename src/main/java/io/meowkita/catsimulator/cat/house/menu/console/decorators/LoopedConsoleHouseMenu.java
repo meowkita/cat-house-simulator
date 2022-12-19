@@ -38,7 +38,7 @@ public class LoopedConsoleHouseMenu extends ConsoleHouseMenu {
                 default -> System.out.println("Action [" + action + "] is not supported!");
             }
 
-            System.out.println("\n");
+            System.out.println();
         }
     }
 
